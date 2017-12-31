@@ -1,3 +1,5 @@
+package basic
+
 enum class Color {
     RED, ORANGE, YELLOW, GREEN, BLUE
 }
@@ -13,7 +15,7 @@ fun getMnemonic(color: Color) =
 
 fun getWarmth(color: Color) = when (color) {
     Color.RED, Color.ORANGE -> "Warm"
-    else -> throw Exception("Dirty Color")
+    else -> throw Exception("Dirty basic.Color")
 
 }
 

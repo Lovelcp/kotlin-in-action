@@ -1,3 +1,5 @@
+package basic
+
 class Person(val name: String)
 
 class Person1() {

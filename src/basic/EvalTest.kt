@@ -1,3 +1,5 @@
+package basic
+
 interface Expr
 class Num(val value: Int) : Expr
 class Sum(val left: Expr, val right: Expr) : Expr
@@ -28,7 +30,7 @@ fun evalWithLoggin(e: Expr): Int = when (e) {
     is Sum -> {
         val left = evalWithLoggin(e.left)
         val right = evalWithLoggin(e.right)
-        println("sum: $left + $right")
+        println("basic.sum: $left + $right")
         left + right
     }
     else -> throw IllegalArgumentException("Unknown expression")
