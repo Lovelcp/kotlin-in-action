@@ -26,7 +26,9 @@ class TwitterUser(nickname: String) : User5(nickname)
 
 open class Button2
 
-class RadioButton
+class RadioButton : Button2()
+
+class Secretive private constructor() {}
 
 fun main(args: Array<String>) {
     println(User1("1").nickname)
