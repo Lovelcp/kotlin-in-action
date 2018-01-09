@@ -7,4 +7,9 @@ fun main(args: Array<String>) {
 
     val numbers = mapOf(0 to "zero", 1 to "one")
     println(numbers.mapValues { it.value.toUpperCase() })
+
+    println(list.all { it > 2 })
+    println(list.any { it > 2 })
+    println(list.count { it > 2 })
+    println(list.find { it > 2 })
 }
