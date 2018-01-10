@@ -12,4 +12,6 @@ fun main(args: Array<String>) {
     println(list.any { it > 2 })
     println(list.count { it > 2 })
     println(list.find { it > 2 })
+
+    println(listOf("a", "ab", "b").groupBy(String::first))
 }
