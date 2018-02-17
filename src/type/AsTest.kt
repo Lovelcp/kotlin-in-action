@@ -11,9 +11,16 @@ class Person1(val firstName: String, val lastName: String) {
     }
 }
 
+fun ignoreNulls(s: String?) {
+    val sNotNull: String = s!!
+    println(sNotNull.length)
+}
+
 fun main(args: Array<String>) {
     val p1 = Person1("Dmitry", "Jemerov")
     val p2 = Person1("Dmitry", "Jemerov")
     println(p1 == p2)
     println(p1.equals(42))
+
+    ignoreNulls(null)
 }
