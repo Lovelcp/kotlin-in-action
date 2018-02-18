@@ -20,6 +20,13 @@ operator fun Point.times(scale: Double): Point {
     return Point((x * scale).toInt(), (y * scale).toInt())
 }
 
+/**
+ * 重载取反运算符
+ */
+operator fun Point.unaryMinus(): Point {
+    return Point(-x, -y)
+}
+
 fun main(args: Array<String>) {
     val p1 = Point(10, 20)
     val p2 = Point(30, 40)
@@ -27,6 +34,9 @@ fun main(args: Array<String>) {
 
     val p3 = Point(10, 20)
     println(p3 * 1.5)
+
+    val p4 = Point(10, 20)
+    println(-p4)
 
     val list = arrayListOf(1, 2)
     list += 3
