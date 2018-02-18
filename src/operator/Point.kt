@@ -27,6 +27,13 @@ operator fun Point.unaryMinus(): Point {
     return Point(-x, -y)
 }
 
+class Person(val firstName: String, val lastName: String) : Comparable<Person> {
+    override fun compareTo(other: Person): Int {
+        // 按顺序调用给定的方法，并比较他们的值
+        return compareValuesBy(this, other, Person::lastName, Person::firstName)
+    }
+}
+
 fun main(args: Array<String>) {
     val p1 = Point(10, 20)
     val p2 = Point(30, 40)
