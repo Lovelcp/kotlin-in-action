@@ -27,4 +27,10 @@ fun main(args: Array<String>) {
 
     val p3 = Point(10, 20)
     println(p3 * 1.5)
+
+    val list = arrayListOf(1, 2)
+    list += 3
+    val newList = list + listOf(4, 5)
+    println(list)
+    println(newList)
 }
