@@ -27,6 +27,25 @@ operator fun Point.unaryMinus(): Point {
     return Point(-x, -y)
 }
 
+operator fun Point.get(index: Int): Int {
+    return when (index) {
+        0 -> x
+        1 -> y
+        else -> throw IndexOutOfBoundsException("Invalid coordinate $index")
+    }
+}
+
+data class MutablePoint(var x: Int, var y: Int)
+
+operator fun MutablePoint.set(index: Int, value: Int) {
+    // 根据给出的index修改对应的坐标
+    when (index) {
+        0 -> x = value
+        1 -> y = value
+        else -> throw IndexOutOfBoundsException("Invalid coordinate $index")
+    }
+}
+
 class Person(val firstName: String, val lastName: String) : Comparable<Person> {
     override fun compareTo(other: Person): Int {
         // 按顺序调用给定的方法，并比较他们的值
@@ -44,6 +63,13 @@ fun main(args: Array<String>) {
 
     val p4 = Point(10, 20)
     println(-p4)
+
+    val p5 = Point(10, 20)
+    println(p5[1])
+
+    val mp = MutablePoint(10, 20)
+    mp[1] = 42
+    println(mp)
 
     val list = arrayListOf(1, 2)
     list += 3
