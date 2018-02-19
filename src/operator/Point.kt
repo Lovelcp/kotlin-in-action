@@ -85,6 +85,11 @@ fun main(args: Array<String>) {
     println(Point(20, 30) in rect)
     println(Point(5, 5) in rect)
 
+    val p6 = Point(10, 20)
+    val (x, y) = p6
+    println(x)
+    println(y)
+
     val list = arrayListOf(1, 2)
     list += 3
     val newList = list + listOf(4, 5)
