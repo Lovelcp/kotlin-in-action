@@ -46,6 +46,16 @@ operator fun MutablePoint.set(index: Int, value: Int) {
     }
 }
 
+data class Rectangle(val upperLeft: Point, val lowerRight: Point)
+
+/**
+ * 判断某个点是否在某个矩形内
+ */
+operator fun Rectangle.contains(p: Point): Boolean {
+    return p.x in upperLeft.x until lowerRight.x &&
+            p.y in upperLeft.y until lowerRight.y
+}
+
 class Person(val firstName: String, val lastName: String) : Comparable<Person> {
     override fun compareTo(other: Person): Int {
         // 按顺序调用给定的方法，并比较他们的值
@@ -70,6 +80,10 @@ fun main(args: Array<String>) {
     val mp = MutablePoint(10, 20)
     mp[1] = 42
     println(mp)
+
+    val rect = Rectangle(Point(10, 20), Point(50, 50))
+    println(Point(20, 30) in rect)
+    println(Point(5, 5) in rect)
 
     val list = arrayListOf(1, 2)
     list += 3
